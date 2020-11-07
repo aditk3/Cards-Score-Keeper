@@ -44,21 +44,21 @@ def update_score(entry_cost=50):
     write_scores(score_dict)
 
 
-def write_scores(sdict):
-    names = [name for name in sdict.keys()]
+def write_scores(scores_dict):
+    names = [name for name in scores_dict.keys()]
 
     file = open('payments.txt', 'w')
 
     for name in names:
-        file.write(f'{name} {sdict[name]}\n')
+        file.write(f'{name} {scores_dict[name]}\n')
 
     file.close()
 
 
 def to_pay():
-    dictt = read_score_to_dict()
-    for k in dictt.keys():
-        print(f'{k} : {dictt[k]}')
+    temp_dict = read_score_to_dict()
+    for k in temp_dict.keys():
+        print(f'{k} : {temp_dict[k]}')
 
 
 if __name__ == '__main__':
