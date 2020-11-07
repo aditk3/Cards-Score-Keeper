@@ -33,14 +33,14 @@ def read_score_to_dict():
     return dict_ver
 
 
-def update_score():
+def update_score(entry_cost = 50):
     names = open('round.txt').read().split()
 
     score_dict = read_score_to_dict()
-    score_dict[names[0]] = score_dict[names[0]] + (50 * (len(names) - 1))
+    score_dict[names[0]] = score_dict[names[0]] + (entry_cost * (len(names) - 1))
     for i, name in enumerate(names):
         if i != 0:
-            score_dict[name] = score_dict[name] - 50
+            score_dict[name] = score_dict[name] - entry_cost
 
     write_scores(score_dict)
 
