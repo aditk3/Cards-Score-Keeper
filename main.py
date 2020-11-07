@@ -1,6 +1,5 @@
 from collections import namedtuple
 
-
 Player = namedtuple('Player', ['name', 'score'])
 
 
@@ -10,7 +9,7 @@ def reset_scores():
         names[i] = name[:-1]
 
     players = [Player(n, 0) for n in names]
-    file = open('scores.txt', 'w')
+    file = open('payments.txt', 'w')
 
     for a in players:
         file.write(f'{a.name} {a.score}\n')
@@ -18,7 +17,7 @@ def reset_scores():
 
 
 def read_score_to_dict():
-    file = open('scores.txt')
+    file = open('payments.txt')
     dict_ver = {}
     list_ver = []
 
@@ -33,7 +32,7 @@ def read_score_to_dict():
     return dict_ver
 
 
-def update_score(entry_cost = 50):
+def update_score(entry_cost=50):
     names = open('round.txt').read().split()
 
     score_dict = read_score_to_dict()
@@ -48,7 +47,7 @@ def update_score(entry_cost = 50):
 def write_scores(sdict):
     names = [name for name in sdict.keys()]
 
-    file = open('scores.txt', 'w')
+    file = open('payments.txt', 'w')
 
     for name in names:
         file.write(f'{name} {sdict[name]}\n')
