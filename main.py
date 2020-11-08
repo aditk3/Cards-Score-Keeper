@@ -62,6 +62,7 @@ def to_pay():
 
 
 if __name__ == '__main__':
-    reset_scores()
+    # reset_scores()
     # update_score()
-    to_pay()
+    to_pay() 
+    
